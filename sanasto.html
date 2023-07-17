@@ -1,3 +1,55 @@
+<html>
+<head>
+	<style type="text/css">
+		@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Käsite"; }
+	td:nth-of-type(2):before { content: "Englanniksi"; }
+	td:nth-of-type(3):before { content: "Tyyppi"; }
+	td:nth-of-type(4):before { content: "Käyttö"; }
+	td:nth-of-type(5):before { content: "Synonyymejä"; }
+	td:nth-of-type(6):before { content: "Selitys"; }
+	
+	</style>
+</head>
+<body>
 <h1 id="tuplakiekkosanasto">Tuplakiekkosanasto</h1>
 <p>Alkuperäinen <a
 href="https://doubledisccourt.com/glossary.html">englanninkielinen
@@ -23,7 +75,7 @@ vastaamaan suomen kieleen vakiintunutta käyttöä.</p>
 <th style="text-align: left;">Tyyppi</th>
 <th style="text-align: left;">Käyttö</th>
 <th style="text-align: left;">Synonyymejä</th>
-<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Selitys</th>
 </tr>
 </thead>
 <tbody>
@@ -32,7 +84,7 @@ vastaamaan suomen kieleen vakiintunutta käyttöä.</p>
 <td style="text-align: left;">Hyzer</td>
 <td style="text-align: left;">Yleis</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Kun kiekon ulkoreuna, eli kiekosta kiinni
 pitävän käden vastapäätä oleva reuna, on kallellaan maata kohti,
 heitossa on “hysseä”.</td>
@@ -42,7 +94,7 @@ heitossa on “hysseä”.</td>
 <td style="text-align: left;">Anhyzer</td>
 <td style="text-align: left;">Yleis</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Kun kiekon ulkoreuna, eli kiekosta kiinni
 pitävän käden vastapäätä oleva reuna, on kallellaan taivasta kohti,
 heitossa on “annukkaa”.</td>
@@ -52,7 +104,7 @@ heitossa on “annukkaa”.</td>
 <td style="text-align: left;">Attack</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Pisteentekoyritys. Toinen pelaajista voi
 yrittää tehdä voittavan heiton, tai pelaajat voivat yrittää yhdessä
 tuplahyökkäystä.</td>
@@ -62,7 +114,7 @@ tuplahyökkäystä.</td>
 <td style="text-align: left;">Back</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Pelaaja, joka vastaanottaa johtokiekon
 tuplapuolustustilanteessa. Taka yleensä katsoo molempien kiekkojen
 lentoradat, ja sitten joko heittää tai tippaa oman kiekkonsa ensin, tai
@@ -73,7 +125,7 @@ käskee etupelaajaa pelaamaan kiekkonsa ensin.</td>
 <td style="text-align: left;">Backhand</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Rystyheitto tehdään oikein päin olevalla
 kiekolla, peukalo päälla ja muut sormet alla. Se on pelin yleisin
 heittotyyppi, ja heitto tehdään yleensä kallistettuna alaspäin (ks.
@@ -84,7 +136,7 @@ heittotyyppi, ja heitto tehdään yleensä kallistettuna alaspäin (ks.
 <td style="text-align: left;">Brush</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">**</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Tippaustyyli, jossa lyödään kiekon
 ulkoreunaa, jolloin se ponnahtaa takaisin ilmaan. Se tehdään yleensä
 heitolle, jossa on hysseä, mutta jyrkästi laskeutuvaa upsiheittoa
@@ -95,7 +147,7 @@ voidaan myös harjata. Se on helpointa tehdä vastatuulen suuntaan.</td>
 <td style="text-align: left;">Burn</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Matala ja nopea heitto, joka yleensä
 laskeutuu vastustajan kentän etuosaan. Yleisin valinta tehdessä
 tuplausheittoa.</td>
@@ -124,7 +176,7 @@ tästä kaksi pistettä.</td>
 <td style="text-align: left;">Doubling Attack</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Molempien kiekkojen heittäminen
 vastustajan kenttäpuoliskoon: johtoheitto, jota seuraa
 hyökkäysheitto.</td>
@@ -152,7 +204,7 @@ on usein joko poltto- tai ohitusheitto.</td>
 <td style="text-align: left;">Dump</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Hyökkäysheitto, jossa kiekko heitetään
 kentän etuosassa seisovan vastustajan pään yli, mutta tarpeeksi nopeana
 ja matalana, jotta siihen olisi vaikea ehtiä kentän takaosassa.</td>
@@ -162,7 +214,7 @@ ja matalana, jotta siihen olisi vaikea ehtiä kentän takaosassa.</td>
 <td style="text-align: left;">Escape</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Molempien kiekkojen onnistunut palautus
 vastustajille tuplatilanteessa.</td>
 </tr>
@@ -171,7 +223,7 @@ vastustajille tuplatilanteessa.</td>
 <td style="text-align: left;">Front</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Pelaaja, joka hoitaa hyökkäyskiekon
 (tuplahyökkäyksen jälkimmäinen heitto) tuplatilanteessa. Etu odottaa
 yleensä takapelaajan ohjetta ja tekee joko tipin tai off-heiton, tai
@@ -182,7 +234,7 @@ sitten lypsää kiekkoa kunnes se voidaan kopata.</td>
 <td style="text-align: left;">Glazed Donut</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">*</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Hidas ja vähäkierteinen hyökkäysheitto,
 jossa kiekkoa roikotetaan sormenpäillä, kuvapuoli heittäjää päin, ennen
 heittoa. Kiekko lentää aluksi pystysuorassa, mutta kierteen puutteen
@@ -203,7 +255,7 @@ off-heitto.</td>
 <td style="text-align: left;">Hold</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Huuto, joka merkitsee, että joukkuetoverin
 on kopattava kiekko ja pidettävä se. Huuto tehdään yleensä silloin, kun
 on selvää että toinen kiekko on menossa ulos.</td>
@@ -213,7 +265,7 @@ on selvää että toinen kiekko on menossa ulos.</td>
 <td style="text-align: left;">Hook Thumb</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">**</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Upsiheitto, jossa kiekkoa pidetään
 etikettipuoli pois päin kehosta, peukalon ulkosyrjä kiekon reunuksen
 alla. Kiekon lentorata muistuttaa skubaa.</td>
@@ -223,7 +275,7 @@ alla. Kiekon lentorata muistuttaa skubaa.</td>
 <td style="text-align: left;">Impasse</td>
 <td style="text-align: left;">Säännöt</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Tilanne, jossa kumpikin joukkue pitää yhtä
 kiekkoa. Aloitevuorossa olevan joukkueen pitää heittää
 ensimmäisenä.</td>
@@ -233,7 +285,7 @@ ensimmäisenä.</td>
 <td style="text-align: left;">Inflip</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">*</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Hidas, vähäkierteinen heitto, joka
 heitetään rystynä, mutta kämmenheiton otteella, kuvapuoli kohti
 heittäjää. Kierteen puute saa sen lepattamaan ja oikenemaan.</td>
@@ -243,7 +295,7 @@ heittäjää. Kierteen puute saa sen lepattamaan ja oikenemaan.</td>
 <td style="text-align: left;">Initiation</td>
 <td style="text-align: left;">Säännöt</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Aloitevuorossa olevan joukkueen velvoite
 heittää ensin pattitilanteessa.</td>
 </tr>
@@ -252,7 +304,7 @@ heittää ensin pattitilanteessa.</td>
 <td style="text-align: left;">Jedi</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">*</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Tuplahyökkäys, jossa johto heitetään
 kentän etuosaan, usein ilmapomppuna, jolloin se hidastuu ja saapuu yhtä
 aikaa perille polttoheiton kanssa.</td>
@@ -262,7 +314,7 @@ aikaa perille polttoheiton kanssa.</td>
 <td style="text-align: left;">Lead</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">*****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Tuplahyökkäyksen ensimmäinen heitto. Sen
 pitää olla ilmassa tarpeeksi pitkään, jotta polttoheitto, joka heitetään
 myöhemmin, tulisi perille samaan aikaan.</td>
@@ -272,7 +324,7 @@ myöhemmin, tulisi perille samaan aikaan.</td>
 <td style="text-align: left;">Milk</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Koppauksen viivästyttäminen, jotta
 joukkuetoveri ehtii pelata omaa kiekkoaan ensin.</td>
 </tr>
@@ -302,7 +354,7 @@ puoli.</td>
 <td style="text-align: left;">Proximity Attack</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">***</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Tuplahyökkäys, jossa hyökkäysheitto
 sijoitetaan mahdollisimman lähelle johtoheittoa, jolloin puolustajat
 joutuvat tekemään paon samassa kohdassa kenttää, ollen mahdollisesti
@@ -313,7 +365,7 @@ toistensa tiellä.</td>
 <td style="text-align: left;">Rally Shot</td>
 <td style="text-align: left;">Puolustus</td>
 <td style="text-align: left;">****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Aloitevuorossa olevan joukkueen heitto
 pattitilanteessa. Heitto on parasta tehdä lähelle takarajaa, koska
 kiekosta tulee seuraavan hyökkäyksen polttoheitto.</td>
@@ -323,7 +375,7 @@ kiekosta tulee seuraavan hyökkäyksen polttoheitto.</td>
 <td style="text-align: left;">Scoober</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">***</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Rystyotteella olan korkeudelta tehty
 heitto, joka lähtee käsi edellä, kiekon logopuoli pois päin
 kehosta.</td>
@@ -343,7 +395,7 @@ alla.</td>
 <td style="text-align: left;">Sneaker</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">**</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Matala oikein päin heitetty kaartava
 heitto, joka ohittaa syöttäjän. Ideana on yllättää syöttöönsä
 keskittynyt pelaaja.</td>
@@ -362,7 +414,7 @@ yleensä aloitevuorossa heitetty, vaihtoehtona pitkälle heitolle.</td>
 <td style="text-align: left;">Spread Attack</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">**</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Tuplahyökkäys, jossa johto- ja
 hyökkäysheitot tulevat eri puolille kenttää, mikä tekee paon
 koordinoimisesta hankalampaa.</td>
@@ -372,7 +424,7 @@ koordinoimisesta hankalampaa.</td>
 <td style="text-align: left;">Staker</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">***</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Rystyheitto, jossa peukalo on kiekon alla
 ja muut sormet kiekon päällä. Heitetään polttona heikolle puolelle
 kenttää.</td>
@@ -382,7 +434,7 @@ kenttää.</td>
 <td style="text-align: left;">Strong Side</td>
 <td style="text-align: left;">Hyökkäys</td>
 <td style="text-align: left;">****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Se kentän puoli, jonne on helpompi heittää
 sisään jäävä polttoheitto. Esimerkiksi oikeakätisen heittämä upsi vierii
 yleensä vasemmalle laskeuduttuaan, joten sen vahva puoli on oikea.
@@ -394,7 +446,7 @@ koska ne kaartavat yleensä oikealle.</td>
 <td style="text-align: left;">Thumber</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">*</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Samanlainen heitto kuin kämmen, paitsi
 että peukalo on pituussuunnassa kiekon reunuksen alla.</td>
 </tr>
@@ -443,7 +495,7 @@ joskus myös poltoissa.</td>
 <td style="text-align: left;">Wet Blanket</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">**</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Hidas matalakierteinen heitto, joka on
 rannevippaus lukitulla ranteella. Onnistueessaan se lentää aluksi
 normaalisti, kunnes alkaa heilua ennalta-arvaamattomasti kierteen
@@ -454,7 +506,7 @@ loppuessa.</td>
 <td style="text-align: left;">Wrist Flip</td>
 <td style="text-align: left;">Heitto</td>
 <td style="text-align: left;">****</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Kämmenheitto, jossa peukalo on kiekon
 alla, ja heitto lähtee käsivarsi edellä. Erityisen käyttökelpoinen
 nopeassa poisheitossa, jossa upsi otetaan kiinni peukalo päällä,
@@ -463,3 +515,4 @@ vipataan pois.</td>
 </tr>
 </tbody>
 </table>
+</body>
