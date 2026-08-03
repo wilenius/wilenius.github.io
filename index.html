@@ -1,43 +1,428 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Heikki Wilenius</title>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Heikki Wilenius</title>
+        <meta
+            name="description"
+            content="Heikki Wilenius — postdoctoral researcher in anthropology at the University of Helsinki, studying how generative AI is changing the work of software developers. Also an e-learning specialist and occasional web coder."
+        />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Heikki Wilenius</h1>
-        <p>email: heikki.wilenius at iki.fi<br />
-        mastodon: <a rel="me" href="https://fediscience.org/@hw">@hw@fediscience.org</a>
+        <!-- a gloss and the word it sits over -->
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f5f2'/%3E%3Crect x='9' y='8' width='11' height='3' fill='%232743c8'/%3E%3Crect x='6' y='17' width='20' height='4' fill='%2315171a'/%3E%3C/svg%3E"
+        />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+            rel="stylesheet"
+        />
 
+        <style>
+            :root {
+                --paper: #f6f5f2;
+                --ink: #15171a;
+                --ink-2: #454a52;
+                --muted: #62686f;
+                --faint: #949aa2;
+                --rule: #e0ded8;
+                --accent: #2743c8;
+                --accent-soft: rgba(39, 67, 200, 0.4);
 
-        <!--<p class="view"><a href="https://github.com/wilenius">View My GitHub Profile</a></p>-->
+                --serif:
+                    "Source Serif 4", ui-serif, Georgia, "Times New Roman",
+                    serif;
+                --mono:
+                    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo,
+                    monospace;
+            }
 
-      </header>
-      <section>
-        <h3>Some information about me</h3>
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --paper: #101215;
+                    --ink: #e8e6e1;
+                    --ink-2: #b0b4bb;
+                    --muted: #949aa3;
+                    --faint: #6d737b;
+                    --rule: #262a30;
+                    --accent: #96a7ff;
+                    --accent-soft: rgba(150, 167, 255, 0.45);
+                }
+            }
 
-<p>I'm an anthropology postdoctoral researcher, elearning specialist, and an occasional web coder.</p>
-<p>For the academic stuff, check <a href="https://orcid.org/0000-0003-4601-2392">my research database entry</a> at orcid.org.<p>
-<p>As for the web stuff, I've worked mainly with Javascript, PHP and Python, including plenty of Wordpress customizations.</p>
-        <h3>Double Disc Court</h3>
-        <p>I'm a big fan of double disc court (DDC), a frisbee sport played with four persons and two discs. Check out the page for <a href="https://tuplakiekko.fi">Helsinki DDC</a>, our double disc court association.
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+
+            body {
+                margin: 0;
+                background: var(--paper);
+                color: var(--ink);
+                font-family: var(--serif);
+                font-size: 17px;
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+            }
+
+            main {
+                max-width: 40rem;
+                margin: 0 auto;
+                padding: clamp(56px, 11vh, 128px) clamp(24px, 6vw, 40px) 96px;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            :focus-visible {
+                outline: 2px solid var(--accent);
+                outline-offset: 3px;
+                border-radius: 1px;
+            }
+
+            /* ---------- header ---------- */
+
+            header {
+                display: flex;
+                align-items: center;
+                gap: clamp(18px, 4vw, 26px);
+                margin-bottom: clamp(38px, 7vh, 58px);
+            }
+
+            .portrait {
+                flex: none;
+                width: 88px;
+                height: 88px;
+                display: block;
+                border-radius: 2px;
+                box-shadow: 0 0 0 1px var(--rule);
+                filter: grayscale(1) contrast(1.03);
+            }
+
+            @media (prefers-color-scheme: dark) {
+                .portrait {
+                    filter: grayscale(1) contrast(1.03) brightness(0.8);
+                }
+            }
+
+            h1 {
+                font-family: var(--mono);
+                font-weight: 500;
+                font-size: clamp(1.65rem, 6.4vw, 2.3rem);
+                letter-spacing: -0.035em;
+                line-height: 1.1;
+                margin: 0 0 0.5rem;
+            }
+
+            .affiliation {
+                font-family: var(--mono);
+                font-size: 0.7rem;
+                font-weight: 400;
+                letter-spacing: 0.13em;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin: 0;
+            }
+
+            /* ---------- bio, with interlinear glosses ---------- */
+
+            .bio {
+                font-size: clamp(1.16rem, 3.1vw, 1.32rem);
+                line-height: 1.85;
+                color: var(--ink-2);
+                max-width: 30em;
+                margin: 0;
+            }
+            .bio strong {
+                font-weight: 600;
+                color: var(--ink);
+            }
+
+            ruby {
+                ruby-position: over;
+                ruby-align: center;
+            }
+            /* the glossed phrase itself */
+            ruby > .base {
+                color: var(--ink);
+                /* a wrapping base splits its gloss across two lines */
+                white-space: nowrap;
+                text-decoration: underline;
+                text-decoration-color: var(--accent-soft);
+                text-decoration-thickness: 1px;
+                text-underline-offset: 0.22em;
+                text-decoration-skip-ink: none;
+            }
+            /* the gloss above it */
+            rt {
+                font-family: var(--mono);
+                font-weight: 400;
+                font-size: 0.44em;
+                line-height: 1;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--accent);
+                text-align: center;
+                transform: translateY(0.35em);
+            }
+
+            /* the one gesture: glosses settle in after the sentence */
+            @media (prefers-reduced-motion: no-preference) {
+                rt {
+                    opacity: 0;
+                    animation: gloss 0.6s cubic-bezier(0.2, 0.7, 0.3, 1)
+                        forwards;
+                    animation-delay: calc(700ms + var(--g, 0) * 260ms);
+                }
+                @keyframes gloss {
+                    from {
+                        opacity: 0;
+                        transform: translateY(0.95em);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0.35em);
+                    }
+                }
+            }
+
+            /* ---------- elsewhere ---------- */
+
+            .elsewhere {
+                margin-top: clamp(44px, 7vh, 62px);
+            }
+
+            .section-label {
+                font-family: var(--mono);
+                font-size: 0.68rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--faint);
+                margin: 0 0 1.1rem;
+            }
+
+            .row {
+                display: grid;
+                grid-template-columns: 6.25rem 1fr;
+                gap: 0 1.75rem;
+                align-items: baseline;
+                padding: 1.05rem 0;
+                border-top: 1px solid var(--rule);
+                text-decoration: none;
+                color: inherit;
+            }
+            .row:last-child {
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .kind {
+                font-family: var(--mono);
+                font-size: 0.68rem;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--muted);
+                transition: color 0.18s ease;
+                padding-top: 0.28em;
+            }
+
+            .addr {
+                display: inline-block;
+                font-family: var(--mono);
+                font-size: 0.94rem;
+                letter-spacing: -0.01em;
+                color: var(--ink);
+                background-image: linear-gradient(
+                    var(--accent),
+                    var(--accent)
+                );
+                background-size: 0 1px;
+                background-repeat: no-repeat;
+                background-position: 0 100%;
+                transition:
+                    background-size 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
+                    color 0.18s ease;
+                padding-bottom: 2px;
+            }
+
+            .note {
+                display: block;
+                margin-top: 0.35rem;
+                font-size: 0.98rem;
+                line-height: 1.55;
+                color: var(--muted);
+                max-width: 34em;
+            }
+
+            a.row:hover .addr,
+            a.row:focus-visible .addr {
+                color: var(--accent);
+                background-size: 100% 1px;
+            }
+            a.row:hover .kind,
+            a.row:focus-visible .kind {
+                color: var(--accent);
+            }
+
+            /* email is spelled out rather than linked — no hover affordance */
+            .addr .at {
+                color: var(--faint);
+            }
+
+            /* ---------- footer ---------- */
+
+            footer {
+                margin-top: clamp(52px, 10vh, 84px);
+                font-family: var(--mono);
+                font-size: 0.68rem;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--faint);
+            }
+            footer span {
+                margin: 0 0.7em;
+                opacity: 0.45;
+            }
+
+            @media (max-width: 560px) {
+                header {
+                    align-items: flex-start;
+                }
+                .portrait {
+                    width: 68px;
+                    height: 68px;
+                }
+                .row {
+                    grid-template-columns: 1fr;
+                    gap: 0.45rem;
+                }
+                .kind {
+                    padding-top: 0;
+                }
+                .bio {
+                    line-height: 1.95;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <img
+                    class="portrait"
+                    src="portrait.jpg"
+                    alt="Heikki Wilenius"
+                    width="88"
+                    height="88"
+                />
+                <div>
+                    <h1>Heikki Wilenius</h1>
+                    <p class="affiliation">
+                        Anthropologist &middot;&nbsp;Helsinki
+                    </p>
+                </div>
+            </header>
+
+            <!-- The glosses are dates. Replace each 20XX with the real year. -->
+            <p class="bio">
+                I'm a
+                <ruby
+                    ><span class="base">postdoctoral researcher</span
+                    ><rt style="--g: 0">2020&ndash;</rt></ruby
+                >
+                in anthropology at the University of Helsinki, currently
+                studying how generative AI is changing the work of
+                <ruby
+                    ><span class="base">software developers</span
+                    ><rt style="--g: 1">fieldwork 2024&ndash;</rt></ruby
+                >. I also have substantial experience as an
+                <ruby
+                    ><span class="base">e&#8209;learning specialist</span
+                    ><rt style="--g: 2">2007&ndash;</rt></ruby
+                >
+                and
+                <ruby
+                    ><span class="base">software developer</span
+                    ><rt style="--g: 3">2001&ndash;</rt></ruby
+                >.
+            </p>
+
+            <section class="elsewhere">
+                <h2 class="section-label">Elsewhere</h2>
+
+                <a class="row" href="https://orcid.org/0000-0003-4601-2392">
+                                    <span class="kind">Publications</span>
+                                    <span>
+                                        <span class="addr">orcid.org/0000-0003-4601-2392</span>
+                                        <span class="note"
+                                            >Most of my research relates to either Indonesia,
+                                            politics, sound, or technology.</span
+                                        >
+                                    </span>
+                </a>
+
+                 <a class="row" href="https://adhocism.net">
+                    <span class="kind">Notes</span>
+                    <span>
+                        <span class="addr">adhocism.net</span>
+                        <span class="note"
+                            >A digital garden: a slowly growing patch of notes,
+                            half-formed ideas, and things I'm thinking through
+                            out in the open.</span
+                        >
+                    </span>
+                </a>
+
+                <a class="row" href="https://github.com/wilenius">
+                    <span class="kind">Code</span>
+                    <span>
+                        <span class="addr">github.com/wilenius</span>
+                        <span class="note"
+                            >Most of what I make ends up here — research tooling,
+                            small web things, and the odd experiment.</span
+                        >
+                    </span>
+                </a>
+
+                <a
+                    class="row"
+                    rel="me"
+                    href="https://fediscience.org/@hw"
+                >
+                    <span class="kind">Posts</span>
+                    <span>
+                        <span class="addr">@hw@fediscience.org</span>
+                        <span class="note"
+                            >Mostly AI and anthropology, on Mastodon.</span
+                        >
+                    </span>
+                </a>
+
+                <div class="row">
+                    <span class="kind">Email</span>
+                    <span>
+                        <span class="addr"
+                            >heikki.wilenius
+                            <span class="at">at</span> iki.fi</span
+                        >
+                        <span class="note"
+                            >I like an old-fashioned email — please get in
+                            touch.</span
+                        >
+                    </span>
+                </div>
+            </section>
+
+            <footer>Helsinki <span>&#47;</span> 2026</footer>
+        </main>
+    </body>
 </html>
